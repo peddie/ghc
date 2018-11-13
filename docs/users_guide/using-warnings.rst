@@ -1533,9 +1533,9 @@ of ``-W(no-)*``.
 
     When :extension:`ExplicitForAll` is enabled, explicitly quantified type
     variables may also be identified as unused. For instance: ::
-      
+
         type instance forall x y. F x y = []
-    
+
     would still report ``x`` and ``y`` as unused on the right hand side
 
     Unlike :ghc-flag:`-Wunused-matches`, :ghc-flag:`-Wunused-type-patterns` is
@@ -1543,7 +1543,7 @@ of ``-W(no-)*``.
     unlike term-level pattern names, type names are often chosen expressly for
     documentation purposes, so using underscores in type names can make the
     documentation harder to read.
-    
+
 .. ghc-flag:: -Wunused-foralls
     :shortdesc: warn about type variables in user-written
         ``forall``\\s that are unused
@@ -1657,6 +1657,15 @@ of ``-W(no-)*``.
     The warning is suppressed if the field name begins with an underscore. ::
 
         data Foo = Foo { f :: Int } | Bar
+
+.. ghc-flag:: -Wmalformed-haddock
+    :shortdesc: Show warnings from Haddock documentation extraction/generation
+    :type: dynamic
+    :reverse: -Wno-malformed-haddock
+    :category:
+
+    Show warnings from running Haddock.  This flag only applies when
+    you're running Haddock.
 
 If you're feeling really paranoid, the :ghc-flag:`-dcore-lint` option is a good choice.
 It turns on heavyweight intra-pass sanity-checking within GHC. (It checks GHC's
